@@ -1837,7 +1837,7 @@ class FhirRequest with _$FhirRequest {
           ]);
         } else if (body['resourceType'] == 'OperationOutcome') {
           OperationOutcome operationOutcome = OperationOutcome.fromJson(
-              body['response'] as Map<String, dynamic>);
+            body as Map<String, dynamic>);
           if (body?['status'] != null || body?['message'] != null) {
             operationOutcome = operationOutcome.copyWith(
               issue: <OperationOutcomeIssue>[
